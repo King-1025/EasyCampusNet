@@ -8,6 +8,11 @@ public class EPortalUser extends User
     public final static int ACCOUNT_TYPE_CMCC=0x01;
 	public final static int ACCOUNT_TYPE_UNICOM=0x02;
 	public final static int ACCOUNT_TYPE_OTHER=0x03;
+	public final static int ACCOUNT_TYPE_NONE=0x04;
+	
+	public final static String KEY_ACCOUNT="acvount";
+	public final static String KEY_PASSWORD="password";
+	public final static String KEY_ACCOUNT_TYPE="account_type";
 	
 	public EPortalUser()
 	{

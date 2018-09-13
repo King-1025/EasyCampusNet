@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:background="@color/colorPrimaryDark"
+	android:gravity="center"
+	android:padding="3dp">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="vertical"
+		android:background="@color/colorPrimary">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_horizontal"
+			android:layout_marginBottom="20dp"
+			android:background="@color/colorPrimaryDark">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="账户配置"
+				android:textSize="20sp"
+				android:textColor="@color/colorAccent"/>
+
+		</LinearLayout>
+
+		<View
+			android:layout_height="3dp"
+			android:layout_width="match_parent"
+			android:layout_marginBottom="10dp"
+			android:background="@color/colorNormal"/>
+
+		<RelativeLayout
+			android:layout_height="35dp"
+			android:layout_width="wrap_content"
+			android:gravity="center_vertical"
+			android:layout_marginBottom="15dp">
+
+			<TextView
+				android:layout_height="match_parent"
+				android:layout_width="50dp"
+				android:text="账户:"
+				android:id="@+id/activityloginTextView1"
+				android:gravity="center"
+				android:textColor="@color/colorNormal"
+				android:textSize="15sp"
+				android:background="@color/colorPrimaryDark"/>
+
+			<EditText
+				android:layout_height="match_parent"
+				android:inputType="textPersonName"
+				android:layout_width="250dp"
+				android:background="@color/self_black"
+				android:ems="10"
+				android:layout_toRightOf="@id/activityloginTextView1"
+				android:singleLine="true"
+				android:gravity="center_vertical"
+				android:hint="不能包含特殊字符"
+				android:textSize="15sp"
+				android:id="@+id/settingAccount"
+				android:paddingLeft="2dp"
+				android:textColor="@color/colorNormal"
+				android:textCursorDrawable="@drawable/edit_text_cursor_shape"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_height="35dp"
+			android:layout_width="wrap_content"
+			android:gravity="center_vertical"
+			android:layout_marginBottom="15dp">
+
+			<TextView
+				android:layout_height="match_parent"
+				android:layout_width="50dp"
+				android:text="密码:"
+				android:id="@+id/activityloginTextView2"
+				android:gravity="center"
+				android:textColor="@color/colorNormal"
+				android:textSize="15sp"
+				android:background="@color/colorPrimaryDark"/>
+
+			<EditText
+				android:layout_height="match_parent"
+				android:inputType="textWebPassword"
+				android:ems="10"
+				android:layout_toRightOf="@id/activityloginTextView2"
+				android:singleLine="true"
+				android:hint="8~20个字符"
+				android:gravity="center_vertical"
+				android:textSize="15sp"
+				android:layout_width="250dp"
+				android:id="@+id/settingPassword"
+				android:paddingLeft="2dp"
+				android:textColor="@color/colorNormal"
+				android:textCursorDrawable="@drawable/edit_text_cursor_shape"
+				android:background="@color/self_black"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_height="35dp"
+			android:layout_width="wrap_content"
+			android:gravity="center_vertical"
+			android:layout_marginBottom="15dp">
+
+			<TextView
+				android:layout_height="match_parent"
+				android:layout_width="50dp"
+				android:text="类型:"
+				android:id="@+id/activityloginTextView2"
+				android:gravity="center"
+				android:textColor="@color/colorNormal"
+				android:textSize="15sp"
+				android:background="@color/colorPrimaryDark"/>
+
+			<Spinner
+				android:layout_height="match_parent"
+				android:layout_width="250dp"
+				android:layout_toRightOf="@id/activityloginTextView2"
+				android:id="@+id/settingType"
+				android:paddingLeft="2dp"
+				android:textSize="15sp"
+				android:entries="@array/type"
+				android:background="@color/self_black"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_height="25dp"
+			android:layout_width="match_parent"
+			android:background="@color/colorPrimaryDark">
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_horizontal"
+			android:layout_marginTop="3dp"
+			android:paddingBottom="3dp">
+
+			<Button
+				android:layout_height="40dp"
+				android:layout_width="90dp"
+				android:text="重置"
+				android:background="@drawable/login_seletor"
+				android:textColor="@color/colorAccent"
+				android:id="@+id/settingButtonReset"/>
+
+			<View
+				android:layout_height="match_parent"
+				android:layout_width="50dp"/>
+
+			<Button
+				android:layout_height="40dp"
+				android:layout_width="90dp"
+				android:text="确定"
+				android:background="@drawable/login_seletor"
+				android:textColor="@color/colorAccent"
+				android:id="@+id/settingButtonOK"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+

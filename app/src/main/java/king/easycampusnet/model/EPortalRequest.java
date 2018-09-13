@@ -2,6 +2,7 @@ package king.easycampusnet.model;
 import java.util.*;
 import king.easycampusnet.tool.*;
 import king.easycampusnet.manager.*;
+import king.easycampusnet.*;
 
 public class EPortalRequest implements Request
 {
@@ -97,7 +98,7 @@ public class EPortalRequest implements Request
 	}
 	
 	private String getIP(){
-		return HostTool.getHostIP();
+		return HostTool.getHostIP(MyApplication.getContext());
 	}
 	
 	private void sendMessage(String msg){

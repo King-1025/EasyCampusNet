@@ -3,6 +3,7 @@ import android.util.*;
 import android.widget.*;
 import king.easycampusnet.*;
 import android.os.*;
+import android.content.*;
 
 public class Logger
 {
@@ -14,14 +15,14 @@ public class Logger
 		Log.e(tag,msg);
 	}
 	
-	public static void send(String info){
-		Handler hd=MyApplication.getHandler();
+	public static void send(Handler handler,String info){
+		Handler hd=handler;
 		Message msg=hd.obtainMessage();
 		msg.obj=info;
 		hd.sendMessage(msg);
 	}
 	
-	public static void show(String msg){
-		Toast.makeText(MyApplication.getContext(),msg,1000).show();
+	public static void show(Context context,String msg){
+		Toast.makeText(context,msg,1000).show();
 	}
 }

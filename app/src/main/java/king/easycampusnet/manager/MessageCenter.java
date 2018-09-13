@@ -1,6 +1,7 @@
 package king.easycampusnet.manager;
 import android.os.*;
 import king.easycampusnet.tool.*;
+import king.easycampusnet.*;
 
 public class MessageCenter
 {
@@ -14,7 +15,7 @@ public class MessageCenter
 	}
 	
 	public static void send(String info){
-		Logger.send(info);
+		Logger.send(MyApplication.getHandler(),info);
 	}
 	
 }

@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:dither="true"
     android:shape="rectangle"
-    android:tint="#000000"
+    android:tint="@color/colorPrimaryDark"
     android:visible="true">
     <!-- 圆角 -->
     <corners android:radius="20px"/>
@@ -28,13 +28,12 @@
 	/>
     <!-- 填充 -->
     <solid
-        android:color="#FFFFFF"
+        android:color="@color/colorPrimaryDark"
 	/>
     <!-- 描边 -->
     <stroke
-        android:color="#000000"
-        android:width="2px"
+        android:color="@color/colorNormal"
+        android:width="3px"
         android:dashGap="2px"
-        android:dashWidth="1px"
-    />
+        android:dashWidth="1px"/>
 </shape>

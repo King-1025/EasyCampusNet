@@ -10,6 +10,8 @@ public class MyApplication extends Application
 	
 	private static Handler handler;
 
+	public static String DATA_NAME="user";
+	
 	@Override
 	public void onCreate()
 	{

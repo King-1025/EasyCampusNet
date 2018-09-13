@@ -7,9 +7,9 @@ import android.content.*;
 public class HostTool
 {
 	
-	public static String getHostIP() {
+	public static String getHostIP(Context context) {
 
-		WifiManager wifiManager = (WifiManager) MyApplication.getContext().getSystemService(android.content.Context.WIFI_SERVICE);
+		WifiManager wifiManager = (WifiManager) context.getSystemService(android.content.Context.WIFI_SERVICE);
 		if (!wifiManager.isWifiEnabled()) {  
             wifiManager.setWifiEnabled(true);    
 		}  
@@ -25,8 +25,8 @@ public class HostTool
                ( i >> 24 & 0xFF) ;  
 	}   
 	
-	public static String getHostMAC() {
-		WifiManager wifiManager = (WifiManager)MyApplication.getContext().getSystemService(Context.WIFI_SERVICE);
+	public static String getHostMAC(Context context) {
+		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 		if (!wifiManager.isWifiEnabled()) {  
             wifiManager.setWifiEnabled(true);    
 		}  

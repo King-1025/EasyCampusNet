@@ -1,8 +1,8 @@
 package king.easycampusnet.tool;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
-import android.widget.*;
 
 public class LoginTool
 {

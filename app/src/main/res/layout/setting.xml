@@ -1,6 +1,64 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
-    
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<ListView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginLeft="0px"
+		android:layout_marginRight="0px"
+		android:background="@color/transparent"
+		android:cacheColorHint="@color/transparent"
+		android:divider="@color/transparent"
+		android:fadingEdge="none"
+		android:fadingEdgeLength="0px"
+		android:footerDividersEnabled="false"
+		android:headerDividersEnabled="false"
+		android:listSelector="@color/transparent"
+		android:padding="0dp"
+		android:entries="@array/setting_entry"
+		android:visibility="gone"/>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:gravity="center_horizontal">
+
+		<include
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			layout="@layout/account"
+			android:layout_marginTop="3dp"/>
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:background="@color/colorPrimaryDark"
+			android:layout_marginTop="3dp"
+			android:padding="1dp">
+
+			<ScrollView
+				android:layout_height="match_parent"
+				android:layout_width="match_parent">
+
+				<TextView
+					android:layout_height="match_parent"
+					android:layout_width="match_parent"
+					android:textColor="@color/colorAccent"
+					android:id="@+id/settingLog"
+					android:text="dfr看看"
+					android:padding="3dp"/>
+
+			</ScrollView>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
 </LinearLayout>
+

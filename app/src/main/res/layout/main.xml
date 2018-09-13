@@ -12,41 +12,42 @@
 		android:orientation="vertical"
 		android:paddingLeft="1dp"
 		android:paddingRight="1dp"
-		android:background="#FFFFFF"
-		android:layout_marginTop="3dp">
+		android:background="@color/colorNormal">
 
 		<LinearLayout
 			android:layout_height="30dp"
 			android:layout_width="match_parent"
 			android:orientation="horizontal"
 			android:gravity="center_vertical|center_horizontal"
-			android:background="#000000">
+			android:background="@color/colorPrimaryDark"
+			android:layout_marginTop="1dp">
 
 			<TextView
 				android:layout_height="wrap_content"
 				android:layout_width="wrap_content"
 				android:text="状态显示"
-				android:textColor="#FFFFFF"
-				android:gravity="center"/>
+				android:textColor="@color/colorAccent"
+				android:gravity="center"
+				android:textSize="15sp"/>
 
 		</LinearLayout>
 
 		<View
 			android:layout_height="1dp"
 			android:layout_width="match_parent"
-			android:background="#FFFFFF"/>
+			android:background="@color/colorNormal"/>
 
 		<ScrollView
 			android:layout_height="350dp"
 			android:layout_width="match_parent"
-			android:background="#000000">
+			android:background="@color/colorPrimaryDark">
 
 			<TextView
 				android:layout_height="match_parent"
 				android:layout_width="match_parent"
 				android:id="@+id/mainTextView1"
-				android:textColor="#FFFFFF"
-				android:paddingLeft="3dp"/>
+				android:textColor="@color/colorAccent"
+				android:padding="5dp"/>
 
 		</ScrollView>
 
@@ -64,7 +65,7 @@
 			android:layout_width="match_parent"
 			android:orientation="horizontal"
 			android:padding="8dp"
-			android:background="#000000"
+			android:background="@color/colorPrimaryDark"
 			android:gravity="center">
 
 			<LinearLayout
@@ -72,7 +73,7 @@
 				android:layout_width="match_parent"
 				android:orientation="vertical"
 				android:gravity="center"
-				android:background="#1EFFFFFF">
+				android:background="@color/colorPrimary">
 
 				<Button
 					android:layout_height="50dp"
@@ -80,7 +81,7 @@
 					android:text="认证"
 					android:id="@+id/mainButton1"
 					android:background="@drawable/login_seletor"
-					android:textColor="#FFFFFF"
+					android:textColor="@color/colorAccent"
 					android:textSize="15sp"/>
 
 			</LinearLayout>

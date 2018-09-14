@@ -3,6 +3,8 @@ import android.net.wifi.*;
 import java.net.*;
 import king.easycampusnet.*;
 import android.content.*;
+import android.telephony.*;
+import king.easycampusnet.tool.other.*;
 
 public class HostTool
 {
@@ -33,4 +35,17 @@ public class HostTool
 		WifiInfo info = wifiManager.getConnectionInfo();
 		return info.getMacAddress();
 	}
+	
+	public static String getPhoneNumber(Context context) {  
+        String num = "NO Search";  
+        TelephonyManager telephonyManager = (TelephonyManager) context  
+			.getSystemService(Context.TELEPHONY_SERVICE);  
+        num = telephonyManager.getLine1Number();  
+        return num;  
+    }  
+	
+	public static String getBuildInfo(){
+		return BuildHelper.getAllBuildInformation().toString();
+	}
+   
 }

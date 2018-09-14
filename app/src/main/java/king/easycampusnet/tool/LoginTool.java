@@ -3,6 +3,7 @@ package king.easycampusnet.tool;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import king.easycampusnet.manager.*;
 
 public class LoginTool
 {
@@ -10,6 +11,7 @@ public class LoginTool
 	 private static final int POST=0x01;
 	 
 	 private final static String TAG="LoginTool";
+	 
      public static HttpURLConnection post(String url,String data){
 		    
 			return handle(POST,url,data);
@@ -34,7 +36,7 @@ public class LoginTool
 					connection = (HttpURLConnection) new URL(url).openConnection();
 					connection.setConnectTimeout(5000);
 					connection.setReadTimeout(5000);
-					connection.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Maxthon;)");
+					connection.setRequestProperty("User-Agent",getUserAgent());
 					//允许重定向,最多4次
 					//connection.setInstanceFollowRedirects(true);
 					if(method==null){
@@ -97,5 +99,11 @@ public class LoginTool
         }
 		//Logger.logInfo(TAG,"mapToString:"+sb.toString());
         return sb.toString();
+	}
+	
+	private static String getUserAgent(){
+		String userAgent=RandomUserAgentTool.getRandomUserAgent();
+		MessageCenter.send("User-Agent:"+userAgent);
+		return userAgent;
 	}
 }

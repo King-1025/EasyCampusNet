@@ -14,6 +14,8 @@ public class EPortalUser extends User
 	public final static String KEY_PASSWORD="password";
 	public final static String KEY_ACCOUNT_TYPE="account_type";
 	
+	public final static String KEY_IS_FRESH="is_fresh";
+	
 	public EPortalUser()
 	{
 	    this(0,null,null,null,-1);

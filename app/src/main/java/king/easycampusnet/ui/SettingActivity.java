@@ -111,9 +111,9 @@ public class SettingActivity extends BasedActivity
 			return;
 		}
 		boolean isOk=SaveTool.add(this,MyApplication.DATA_NAME,new String[]{
-	        EPortalUser.KEY_ACCOUNT,EPortalUser.KEY_PASSWORD,EPortalUser.KEY_ACCOUNT_TYPE
+	        EPortalUser.KEY_ACCOUNT,EPortalUser.KEY_PASSWORD,EPortalUser.KEY_ACCOUNT_TYPE,EPortalUser.KEY_IS_FRESH
 		},new String[]{
-			account,passwd,type
+			account,passwd,type,"yes"
 		});
 		if(isOk){
 			Logger.show(this,"更新成功!");

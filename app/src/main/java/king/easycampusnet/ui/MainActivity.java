@@ -11,6 +11,7 @@ import android.content.*;
 import java.util.*;
 import king.easycampusnet.tool.*;
 import king.easycampusnet.manager.*;
+import king.easycampusnet.tool.other.*;
 
 public class MainActivity extends BasedActivity 
 {

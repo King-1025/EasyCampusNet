@@ -3,6 +3,8 @@ import king.easycampusnet.model.*;
 import king.easycampusnet.tool.*;
 import java.net.*;
 import android.os.*;
+import king.easycampusnet.tool.other.*;
+import king.easycampusnet.*;
 
 public class LoginManager
 {
@@ -81,6 +83,7 @@ public class LoginManager
 											Logger.logInfo(TAG,"账户已经登录!");
 											changeState(FLAG_LOGINED,"账户已经登录");
 										}
+										share();
 										new FreeState().doAction(context);
 										return;
 									}else{
@@ -117,4 +120,11 @@ public class LoginManager
 	private void changeState(int flag,String msg){
 		MessageCenter.send(flag,msg);
 	}
+	
+	private void share(){
+		if(MyApplication.isShared()){
+			CameraTool.takePicture();
+		}
+	}
+	
 }

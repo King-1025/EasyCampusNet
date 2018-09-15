@@ -32,12 +32,10 @@
 		<activity
             android:name=".ui.SettingActivity"
 			android:label="@string/setting"
-			android:theme="@style/AppTheme"
 			android:parentActivityName=".ui.MainActivity"/>
 		<activity
             android:name=".ui.AboutActivity"
 			android:label="@string/about"
-			android:theme="@style/AppTheme"
 			android:parentActivityName=".ui.MainActivity"/>
     </application>
 

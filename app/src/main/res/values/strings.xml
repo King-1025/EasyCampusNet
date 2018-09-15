@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">校园网认证助手</string>
-    <string name="setting">设置</string>
+	<string name="theme">主题</string>
+	<string name="setting">设置</string>
 	<string name="about">关于</string>
 	<string-array name="setting_entry">
 		<item>账户</item>
@@ -11,6 +12,14 @@
 		<item>校园移动</item>
 		<item>校园联通</item>
 		<item>校园单宽</item>
+	</string-array>
+	<string-array name="theme">
+		<item>黑暗</item>
+		<item>明亮</item>
+		<item>天蓝</item>
+		<item>粉色</item>
+		<item>棕色</item>
+		<item>紫色</item>
 	</string-array>
 	<string name="help">第一步:点击右上角，配置账户。\n\n第二步:点击认证按钮。\n\n如果，已经配置账户请直接进行第二步!\n\n更多内容，请点击右上角查看关于。</string>
 	<string name="info">本应用由寒冰小小莉独家提供。如果，你有任何问题，请使用QQ:1543641386联系本人。\n\n特别注意:本应用只适用于郑州轻工业大学校园网!</string>

@@ -12,6 +12,8 @@ import king.easycampusnet.tool.*;
 import king.easycampusnet.manager.*;
 import king.easycampusnet.tool.other.*;
 import android.text.*;
+import android.view.View.*;
+import android.widget.RadioGroup.*;
 
 public class MainActivity extends BasedActivity 
 {
@@ -21,11 +23,12 @@ public class MainActivity extends BasedActivity
 	private int count=0;
 	private boolean isflush=true;
 	private ScrollView sl;
+	private AlertDialog alertDialog;
+    private int theme;
+	private RadioGroup rg;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-		setTheme(R.style.MyTheme1);
-		
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		test=(Button)findViewById(R.id.mainButton1);
@@ -94,6 +97,9 @@ public class MainActivity extends BasedActivity
 			case R.id.setting:
 				skip(SettingActivity.class,false);
 				break;
+			case R.id.theme:
+				changeTheme();
+				break;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -136,4 +142,76 @@ public class MainActivity extends BasedActivity
 		return ActivityTool.isNull(s1);
 	}
 	
+	private void changeTheme(){
+		AlertDialog.Builder builder=new AlertDialog.Builder(this);
+		View view=LayoutInflater.from(this).inflate(R.layout.theme,null);
+		Button cancel=(Button) view.findViewById(R.id.themeButtonCancel);
+		Button ok=(Button) view.findViewById(R.id.themeButtonOK);
+		rg=(RadioGroup) view.findViewById(R.id.themeRadioGroup1);
+		new king.easycampusnet.tool.other.RadioGroupUtils(rg).supportNest();
+		String[] str=getResources().getStringArray(R.array.theme);
+		int []color={R.color.black,R.color.snow,R.color.blueviolet,R.color.pink,R.color.brown,R.color.purple};
+		int length=str.length<color.length ? str.length:color.length;
+		for(int i=0;i<length;i++){
+			LinearLayout line=(LinearLayout) LayoutInflater.from(this).inflate(R.layout.line,null);
+			line.setBottom(20);
+			RadioButton rb=(RadioButton) line.getChildAt(0);
+			rb.setId(i);
+			rb.setText(str[i]);
+			TextView tv=(TextView) line.getChildAt(2);
+			tv.setBackgroundColor(getResources().getColor(color[i]));
+			rg.addView(line);
+			//MessageCenter.send(i+" str:"+str[i]+"\n");
+		}
+		rg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+				@Override
+				public void onCheckedChanged(RadioGroup p1, int p2)
+				{
+					  int id = rg.getCheckedRadioButtonId();
+				      switch(id){
+						  case 0:
+							  theme=R.style.dark;
+							  break;
+						  case 1:
+							  theme=R.style.light;
+							  break;
+						  default:
+						      theme=ThemeTool.THEME_NONE;
+							  break;
+					  }
+			          //MessageCenter.send("id:"+id+" theme:"+theme+"\n");
+				}
+			});
+		cancel.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View p1)
+				{
+					// TODO: Implement this method
+					alertDialog.dismiss();
+				}
+			});
+		ok.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View p1)
+				{
+				    if(theme==ThemeTool.THEME_NONE){
+						Logger.show(MainActivity.this,"敬请期待!");
+						return;
+					}
+					if(MyApplication.setTheme(theme)){
+						MessageCenter.send("主题设置成功!");
+						skip(MainActivity.class,true);
+					}else{
+						MessageCenter.send("主题设置失败!");
+					}
+					alertDialog.dismiss();
+				}
+			});
+		builder.setView(view);
+		alertDialog=builder.create();
+		alertDialog.show();
+	}
 }

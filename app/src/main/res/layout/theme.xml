@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="5dp"
+	android:gravity="center">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:gravity="center">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="选择主题"
+				android:textSize="18sp"
+				android:layout_margin="5dp"/>
+
+		</LinearLayout>
+
+		<View
+			android:background="?android:attr/dividerVertical"
+			android:layout_height="1dp"
+			android:layout_width="match_parent"/>
+
+		<ScrollView
+			android:layout_height="150dp"
+			android:layout_width="match_parent"
+			android:layout_marginTop="5dp"
+			android:layout_marginBottom="5dp">
+
+			<RadioGroup
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="vertical"
+				android:id="@+id/themeRadioGroup1"
+				android:paddingLeft="5dp">
+
+			</RadioGroup>
+
+		</ScrollView>
+
+		<View
+			android:background="?android:attr/dividerVertical"
+			android:layout_height="1dp"
+			android:layout_width="match_parent"
+			android:layout_marginBottom="3dp"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_horizontal"
+			android:layout_marginTop="3dp"
+			android:paddingBottom="3dp">
+
+			<Button
+				android:layout_height="35dp"
+				android:layout_width="85dp"
+				android:text="取消"
+				android:background="@drawable/login_seletor"
+				android:textColor="?attr/colorAccent"
+				android:id="@+id/themeButtonCancel"/>
+
+			<View
+				android:layout_height="match_parent"
+				android:layout_width="50dp"/>
+
+			<Button
+				android:layout_height="35dp"
+				android:layout_width="85dp"
+				android:text="确定"
+				android:background="@drawable/login_seletor"
+				android:textColor="?attr/colorAccent"
+				android:id="@+id/themeButtonOK"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+

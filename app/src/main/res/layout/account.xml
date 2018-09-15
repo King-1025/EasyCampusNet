@@ -4,7 +4,7 @@
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:orientation="vertical"
-	android:background="@color/colorPrimaryDark"
+	android:background="?attr/android:colorPrimaryDark"
 	android:gravity="center"
 	android:padding="3dp">
 
@@ -12,7 +12,7 @@
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:orientation="vertical"
-		android:background="@color/colorPrimary">
+		android:background="?attr/android:colorPrimary">
 
 		<LinearLayout
 			android:layout_height="wrap_content"
@@ -20,14 +20,14 @@
 			android:orientation="horizontal"
 			android:gravity="center_horizontal"
 			android:layout_marginBottom="20dp"
-			android:background="@color/colorPrimaryDark">
+			android:background="?attr/android:colorPrimaryDark">
 
 			<TextView
 				android:layout_height="wrap_content"
 				android:layout_width="wrap_content"
 				android:text="账户配置"
 				android:textSize="20sp"
-				android:textColor="@color/colorAccent"/>
+				android:textColor="?attr/colorAccent"/>
 
 		</LinearLayout>
 
@@ -35,7 +35,7 @@
 			android:layout_height="3dp"
 			android:layout_width="match_parent"
 			android:layout_marginBottom="10dp"
-			android:background="@color/colorNormal"/>
+			android:background="?attr/colorNormal"/>
 
 		<RelativeLayout
 			android:layout_height="35dp"
@@ -49,15 +49,15 @@
 				android:text="账户:"
 				android:id="@+id/activityloginTextView1"
 				android:gravity="center"
-				android:textColor="@color/colorNormal"
+				android:textColor="?attr/colorNormal"
 				android:textSize="15sp"
-				android:background="@color/colorPrimaryDark"/>
+				android:background="?attr/android:colorPrimaryDark"/>
 
 			<EditText
 				android:layout_height="match_parent"
 				android:inputType="textPersonName"
 				android:layout_width="250dp"
-				android:background="@color/self_black"
+				android:background="?attr/colorCenter"
 				android:ems="10"
 				android:layout_toRightOf="@id/activityloginTextView1"
 				android:singleLine="true"
@@ -66,7 +66,7 @@
 				android:textSize="15sp"
 				android:id="@+id/settingAccount"
 				android:paddingLeft="2dp"
-				android:textColor="@color/colorNormal"
+				android:textColor="?attr/colorNormal"
 				android:textCursorDrawable="@drawable/edit_text_cursor_shape"/>
 
 		</RelativeLayout>
@@ -83,9 +83,9 @@
 				android:text="密码:"
 				android:id="@+id/activityloginTextView2"
 				android:gravity="center"
-				android:textColor="@color/colorNormal"
+				android:textColor="?attr/colorNormal"
 				android:textSize="15sp"
-				android:background="@color/colorPrimaryDark"/>
+				android:background="?attr/android:colorPrimaryDark"/>
 
 			<EditText
 				android:layout_height="match_parent"
@@ -99,9 +99,9 @@
 				android:layout_width="250dp"
 				android:id="@+id/settingPassword"
 				android:paddingLeft="2dp"
-				android:textColor="@color/colorNormal"
+				android:textColor="?attr/colorNormal"
 				android:textCursorDrawable="@drawable/edit_text_cursor_shape"
-				android:background="@color/self_black"/>
+				android:background="?attr/colorCenter"/>
 
 		</RelativeLayout>
 
@@ -117,9 +117,9 @@
 				android:text="类型:"
 				android:id="@+id/activityloginTextView2"
 				android:gravity="center"
-				android:textColor="@color/colorNormal"
+				android:textColor="?attr/colorNormal"
 				android:textSize="15sp"
-				android:background="@color/colorPrimaryDark"/>
+				android:background="?attr/android:colorPrimaryDark"/>
 
 			<Spinner
 				android:layout_height="match_parent"
@@ -129,14 +129,14 @@
 				android:paddingLeft="2dp"
 				android:textSize="15sp"
 				android:entries="@array/type"
-				android:background="@color/self_black"/>
+				android:background="?attr/colorCenter"/>
 
 		</RelativeLayout>
 
 		<RelativeLayout
 			android:layout_height="25dp"
 			android:layout_width="match_parent"
-			android:background="@color/colorPrimaryDark">
+			android:background="?attr/android:colorPrimaryDark">
 
 		</RelativeLayout>
 
@@ -153,7 +153,7 @@
 				android:layout_width="90dp"
 				android:text="重置"
 				android:background="@drawable/login_seletor"
-				android:textColor="@color/colorAccent"
+				android:textColor="?attr/colorAccent"
 				android:id="@+id/settingButtonReset"/>
 
 			<View
@@ -165,7 +165,7 @@
 				android:layout_width="90dp"
 				android:text="确定"
 				android:background="@drawable/login_seletor"
-				android:textColor="@color/colorAccent"
+				android:textColor="?attr/colorAccent"
 				android:id="@+id/settingButtonOK"/>
 
 		</LinearLayout>

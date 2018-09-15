@@ -11,8 +11,16 @@ public class BasedActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		// TODO: Implement this method
+		initTheme();
 		super.onCreate(savedInstanceState);
 		//ActivityTool.setWindowStatusBarColor(this,R.color.colorPrimaryDark);
+	}
+	
+	private void initTheme(){
+		int value=MyApplication.getTheme();
+		if(value!=ThemeTool.THEME_NONE){
+			setTheme(value);
+		}
 	}
 	
 }

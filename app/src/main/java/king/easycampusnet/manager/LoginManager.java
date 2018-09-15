@@ -73,7 +73,7 @@ public class LoginManager
 								Logger.logInfo(TAG,header);
 								response.disconnect();
 								Logger.logInfo(TAG,"value:"+value);
-								changeState(FLAG_URL_SHOW,"value:"+value);
+								changeState(FLAG_URL_SHOW,"location:"+value);
 								if(value!=null){
 									if(value.equals(request.redirectURL)){
 										if(i!=0){

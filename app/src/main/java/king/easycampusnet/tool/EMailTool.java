@@ -84,7 +84,7 @@ public class EMailTool
 		  sender.addAttachment(CameraTool.getImagePath());
 	  }
   }
-  private static String getType(String type){
+  public static String getType(String type){
 	  String value="未知";
 	  if (String.valueOf(EPortalUser.ACCOUNT_TYPE_ZZULIS).equals(type)){
 		  value="校园网";

@@ -4,7 +4,6 @@ import android.app.*;
 import android.os.*;
 import king.easycampusnet.*;
 import android.widget.*;
-import android.widget.ExpandableListView.*;
 import android.view.*;
 import king.easycampusnet.model.*;
 import android.content.*;
@@ -12,6 +11,7 @@ import java.util.*;
 import king.easycampusnet.tool.*;
 import king.easycampusnet.manager.*;
 import king.easycampusnet.tool.other.*;
+import android.text.*;
 
 public class MainActivity extends BasedActivity 
 {
@@ -20,15 +20,19 @@ public class MainActivity extends BasedActivity
 	private int maxAppend=100;
 	private int count=0;
 	private boolean isflush=true;
+	private ScrollView sl;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+		setTheme(R.style.MyTheme1);
+		
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		test=(Button)findViewById(R.id.mainButton1);
 		log=(TextView)findViewById(R.id.mainTextView1);
-		
-		test.setOnClickListener(new OnClickListener(){
+		sl=(ScrollView) findViewById(R.id.mainScrollView1);
+		log.setTextIsSelectable(true);
+		test.setOnClickListener(new View.OnClickListener(){
 
 				@Override
 				public void onClick(View p1)
@@ -50,9 +54,19 @@ public class MainActivity extends BasedActivity
 						log.setText(String.valueOf(msg.obj)+"\n\n");
 						count=0;
 					}
+					if(log.getMeasuredHeight() != sl.getScrollY() + log.getHeight()){
+						this.postDelayed(new Runnable(){
+
+								@Override
+								public void run()
+								{
+									// TODO: Implement this method
+									sl.fullScroll(ScrollView.FOCUS_DOWN);//滚动到底部
+								}
+							},500);
+					}			
 				}
 			});
-			
     }
 
 	@Override

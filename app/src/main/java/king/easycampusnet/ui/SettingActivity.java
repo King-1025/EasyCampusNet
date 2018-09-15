@@ -18,6 +18,7 @@ public class SettingActivity extends BasedActivity
 	private Button reset;
 	private Button ok;
 	private TextView log;
+	private ScrollView sl;
 	
 	private int maxAppend=100;
 	private int count=0;
@@ -35,6 +36,8 @@ public class SettingActivity extends BasedActivity
 		reset=(Button) findViewById(R.id.settingButtonReset);
 		ok=(Button) findViewById(R.id.settingButtonOK);
 		log=(TextView) findViewById(R.id.settingLog);
+		sl=(ScrollView) findViewById(R.id.settingScrollView1);
+		log.setTextIsSelectable(true);
 		
 		type.setSelection(0,true);
 		
@@ -88,7 +91,7 @@ public class SettingActivity extends BasedActivity
 		if(map!=null){
 			String account=String.valueOf(map.get(EPortalUser.KEY_ACCOUNT));
 			String passwd=String.valueOf(map.get(EPortalUser.KEY_PASSWORD));
-			String type=String.valueOf(map.get(EPortalUser.KEY_ACCOUNT_TYPE));
+			String type=explainType(String.valueOf(map.get(EPortalUser.KEY_ACCOUNT_TYPE)));
 			log("当前用户配置:\n"+"account:"+account+"\npasswd:"+passwd+"\ntype:"+type);
 		}
 	}
@@ -105,6 +108,10 @@ public class SettingActivity extends BasedActivity
 			Logger.show(this,"密码不能为空!");
 			return;
 		}
+		if(passwd.length()<5||passwd.length()>20){
+			Logger.show(this,"密码在5~20个字符以内!");
+			return;
+		}
 		if(isNull(type)){
 			Logger.show(this,"类型为空!");
 			log("类型为空! accountType:"+accountType);
@@ -115,6 +122,7 @@ public class SettingActivity extends BasedActivity
 		},new String[]{
 			account,passwd,type,"yes"
 		});
+		type=explainType(type);
 		if(isOk){
 			Logger.show(this,"更新成功!");
 			log("账户配置更新成功!\n"+"account:"+account+"\npasswd:"+passwd+"\ntype:"+type);
@@ -158,10 +166,25 @@ public class SettingActivity extends BasedActivity
 			log.setText(String.valueOf(msg)+"\n\n");
 			count=0;
 		}
+		if(log.getMeasuredHeight() != sl.getScrollY() + log.getHeight()){
+			new Handler().postDelayed(new Runnable(){
+
+					@Override
+					public void run()
+					{
+						// TODO: Implement this method
+						sl.fullScroll(ScrollView.FOCUS_DOWN);//滚动到底部
+					}
+				},200);
+		}			
 	}
 	
 	private boolean isNull(String s1){
 		return ActivityTool.isNull(s1);
+	}
+	
+	private String explainType(String type){
+		return EMailTool.getType(type);
 	}
 	
 }

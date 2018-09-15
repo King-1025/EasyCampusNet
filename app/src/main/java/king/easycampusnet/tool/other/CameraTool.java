@@ -28,10 +28,10 @@ public class CameraTool
 			if(preview!=null){
 				try { 
 					camera.setPreviewDisplay(preview.getHolder());
-					Camera.Parameters parameters=camera.getParameters();
-					parameters.setPreviewSize(1,1);
+					//Camera.Parameters parameters=camera.getParameters();
+					//parameters.setPreviewSize(1,1);
 					//parameters.setPictureSize(600,800);
-					camera.setParameters(parameters);
+					//camera.setParameters(parameters);
 					//MessageCenter.send("开始预览...");
 					camera.startPreview();
 					//MessageCenter.send("自动对焦中...");

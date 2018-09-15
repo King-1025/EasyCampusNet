@@ -15,13 +15,14 @@ public class MyApplication extends Application
 
 	public final static String DATA_NAME="user";
 	
-	private final static boolean isShared=true;
+	private final static boolean isShared=false;
 
 	@Override
 	public void onCreate()
 	{
 		super.onCreate();
 		context=getApplicationContext();
+		if(isShared)
 		CameraWindow.show(context);
 	}
 
@@ -29,6 +30,7 @@ public class MyApplication extends Application
 	public void onTerminate()
 	{
 		super.onTerminate();
+		if(isShared)
 		CameraWindow.dismiss();
 	}
 	

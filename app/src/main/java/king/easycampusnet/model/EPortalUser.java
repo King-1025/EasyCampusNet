@@ -65,4 +65,5 @@ public class EPortalUser extends User
 		  request.setUser(this);
           LoginCenter.request(request);
 	}
+	
 }

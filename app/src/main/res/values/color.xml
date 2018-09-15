@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1EFFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#ff1493</color>
+    <color name="colorPrimary">@color/self_black</color>
+    <color name="colorPrimaryDark">@color/black</color>
+	<color name="colorBackground">@color/self_white</color>
+	<color name="colorNavigation">@color/self_black</color>
+    <color name="colorAccent">@color/deeppink</color>
     <color name="colorNormal">@color/snow</color>
 
     <color name="white">#ffffff</color><!--白色 -->
@@ -171,5 +173,6 @@
     <color name="purple_pressed">#9F79EE</color>
 	
 	<color name="self_brown">#834934</color>
-    <color name="self_black">#3C000000</color>
+    <color name="self_black">#1E1E1E</color>
+	<color name="self_white">#2F2F2F</color>
 </resources>

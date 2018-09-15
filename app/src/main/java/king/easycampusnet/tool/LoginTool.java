@@ -38,7 +38,7 @@ public class LoginTool
 					connection.setReadTimeout(5000);
 					connection.setRequestProperty("User-Agent",getUserAgent());
 					//允许重定向,最多4次
-					//connection.setInstanceFollowRedirects(true);
+					connection.setInstanceFollowRedirects(true);
 					if(method==null){
 						method="GET";
 						flag=GET;
@@ -103,7 +103,7 @@ public class LoginTool
 	
 	private static String getUserAgent(){
 		String userAgent=RandomUserAgentTool.getRandomUserAgent();
-		MessageCenter.send("User-Agent:"+userAgent);
+		MessageCenter.send("user agent:"+userAgent);
 		return userAgent;
 	}
 }

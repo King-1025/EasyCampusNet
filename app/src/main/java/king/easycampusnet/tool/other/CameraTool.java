@@ -1,4 +1,5 @@
 package king.easycampusnet.tool.other;
+
 import android.graphics.*;
 import android.hardware.*;
 import android.hardware.Camera.*;
